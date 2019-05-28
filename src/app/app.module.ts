@@ -1,42 +1,34 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodoListComponent } from './todo-list/todo-list/todo-list.component';
-import { WeatherForecastComponent } from './weather-forecast/weather-forecast/weather-forecast.component';
-import { CustomDatePipe } from './pipes/date.pipe';
-import { SortPipe } from './pipes/sort.pipe';
+import { WeathrComponent } from './components/weathr/weathr.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ForecastComponent } from './weather-forecast/forecast/forecast.component';
-import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
-import { AgmCoreModule } from '@agm/core';
-// import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
-
-// import { MatGoogleMapsAutocompleteModule } from '@angular-material-extensions/google-maps-autocomplete';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { ForecastComponent } from './components/weathr/forecast/forecast.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SortPipe } from './pipes/sort.pipe';
+import { CustomDatePipe } from './pipes/date.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
+    WeathrComponent,
+    FilterPipe,
     TodoListComponent,
-    WeatherForecastComponent,
-    CustomDatePipe,
+    ForecastComponent,
     SortPipe,
-    ForecastComponent
+    CustomDatePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
     HttpClientModule,
-    GooglePlaceModule,
-    // Ng4GeoautocompleteModule,
-    // MatGoogleMapsAutocompleteModule,
-    AgmCoreModule.forRoot({
-      apiKey: '',
-      libraries: ['places']
-    })
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { TodoListComponent } from './todo-list/todo-list/todo-list.component';
-import { WeatherForecastComponent } from './weather-forecast/weather-forecast/weather-forecast.component';
-import { ForecastComponent } from './weather-forecast/forecast/forecast.component';
+import { WeathrComponent } from './components/weathr/weathr.component';
+import { TodoListComponent } from './components/todo-list/todo-list.component';
+import { ForecastComponent } from './components/weathr/forecast/forecast.component';
 
 const routes: Routes = [
   {path: 'todoList', component: TodoListComponent},
-  {path: 'weather', component: WeatherForecastComponent},
+  {path: 'weather', component: WeathrComponent},
   {path: 'fullWeather', component: ForecastComponent}
 ];
 

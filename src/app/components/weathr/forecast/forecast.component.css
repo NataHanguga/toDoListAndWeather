@@ -1,0 +1,67 @@
+.container {
+    width: 100vw;
+    height: 100px;
+    /* white-space: nowrap; */
+    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.container>.box {
+    float: none;
+    /* height: 90%; */
+    margin: 0 0.25%;
+    display: inline-block;
+    zoom: 1;
+}
+
+.box {
+    display: inline-flex;
+}
+
+.box>div,
+.box>img {
+    margin: 1% 2%;
+    text-align: center;
+}
+
+.date {
+    text-align: center;
+}
+
+.header,
+.back {
+    text-align: center;
+    min-width: 100vw;
+    /* position: fixed; */
+}
+
+.back {
+    position: fixed;
+    /* left: 0; */
+    /* bottom: 0; */
+    width: 100%;
+    /* padding-top: 500px; */
+}
+
+.block-2 {
+    vertical-align: middle;
+    height: 100%;
+}
+
+.max {
+    color: red;
+}
+
+.min {
+    color: blue;
+}
+
+.description-weather {
+    font-size: 16px;
+    font-style: italic;
+    color: gray;
+    /* max-width: 40px; */
+    /* white-space: nowrap; */
+}

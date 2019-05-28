@@ -1,0 +1,18 @@
+<div class="header">Forecast for five days</div>
+<div *ngFor="let day of forecast" class="container">
+    <!-- <div><img src={{day?.icon}}></div> -->
+    <div class="date">{{day.date | date:'MMM dd'}}</div>
+
+    <div class="box d-flex ">
+        <div class="blok-1 w-30">
+            <img src={{day.img}}>
+        </div>
+        <div class="blof-2">
+            <div class="max">Max {{day.tempMax}}<span>&deg;C</span></div>
+            <div class="min">Min {{day.tempMin}}<span>&deg;C</span></div>
+        </div>
+        <div class="description-weather w-40">{{day.description}}</div>
+    </div>
+</div>
+
+<div class="back" [routerLink]="['/weather']" routerLinkActive="router-link-active"><i class="far fa-times-circle fa-3x"></i></div>

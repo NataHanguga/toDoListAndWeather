@@ -1,0 +1,28 @@
+<div class="search">
+    <input placeholder="Search city" auto-complete [(ngModel)]="selectedCity" ((ngModelChange)="selectCity(input?.value)" (keyup.enter)="selectCity(input?.value)" #input focusout="false">
+
+    <div *ngIf="showNote === false">
+        <ul class="list-group" *ngFor="let item of capitals | filter: input.value">
+            <li class="list-group-item" (click)="input.value = item; searchCity(item)">{{item}}</li>
+        </ul>
+    </div>
+</div>
+<div class="mainWeatherContainer">
+    <div class="display-1">{{ customWeather?.temp}}<span class="display-3"><sup>&deg;C</sup></span></div>
+    <div class="main-weather">
+        <img src={{customWeather?.icon}}>
+        <h3>{{ customWeather?.cityName}}</h3>
+        <h6>{{ customWeather?.weatherKind}}</h6>
+    </div>
+    <div class="fiveDaysForecastContainer">
+        <ul *ngFor="let day of forecast" class="list-group">
+            <li class="list-group-item d-flex justify-content-between">
+                <div>{{day.date | date:'MMMM dd'}}</div>
+                <div>{{day.temp}}<sup>&deg;C</sup></div>
+            </li>
+        </ul>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-center" [routerLink]="['/fullWeather']" routerLinkActive="router-link-active">More...</li>
+        </ul>
+    </div>
+</div>

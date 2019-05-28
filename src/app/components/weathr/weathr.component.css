@@ -1,0 +1,33 @@
+.list-group {
+    z-index: 1;
+}
+
+.fiveDaysForecastContainer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.search {
+    width: 100%;
+}
+
+.search>input {
+    width: 100%;
+    /* margin: 0 5px; */
+}
+
+.cleanButton {
+    background: none;
+    border: none;
+}
+
+.main-weather {
+    padding-left: 10px;
+    font-size: 30px;
+}
+
+.mainWeatherContainer {
+    padding-left: 10px;
+}
