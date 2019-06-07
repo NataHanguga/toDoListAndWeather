@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="header">
+    <button routerLink="/" routerLinkActive="active">
+      Back</button>
+    <h3>Edit Todo Item</h3>
+  </div>
+
+  <div class="editContainer d-flex flex-column ">
+    <div class="d-flex flex-column ">
+      <label for="title">Title</label>
+      <input type="text" name="title" id="editTitle" value={{item.title}}>
+    </div>
+    <div class="d-flex flex-column ">
+      <label for="description">Description</label>
+      <textarea name="description" id="editDescription" cols="30" rows="10">{{item.description}}</textarea>
+    </div>
+    <div class="d-flex flex-row justify-content-between">
+      <div id="isComplete" (click)="toggle()">{{item.isComplete}}</div>
+      <div>{{item.date | date}}</div>
+    </div>
+    <div class="d-flex flex-row justify-content-center">
+      <button (click)="saveEditTodoItem()">Save Edition</button>
+    </div>
+  </div>
+</div>

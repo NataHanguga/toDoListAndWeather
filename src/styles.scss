@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.list-group-item, .list-group{
+    margin: 0;
+    // padding: 0;
+}

@@ -1,0 +1,13 @@
+<button routerLink="/weather">Back</button><br>
+<input 
+  type="text" 
+  name="" 
+  id="search" 
+  class="w-100 form-control" 
+  (keyup)="searchCity($event.target.value)">
+
+<ul class="list-group" *ngFor="let city of cityList">
+  <li  class="list-group-item" (click)="chooseCity(city.name)">{{city.name}}</li>
+</ul>
+
+<div *ngIf="!cityList.length">Nothing found. Input somesing</div>

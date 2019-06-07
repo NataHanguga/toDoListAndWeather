@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="header">
+    <h2>TodoList</h2>
+    <button 
+      routerLink="./todo-item" 
+      routerLinkActive="active">
+      Add New Todo Item
+    </button>
+  </div>
+  <div 
+    *ngFor="let item of todoList | sort:'isComplete'" 
+    class="list-group-item list-group-item-action flex-column">
+    <div 
+      class="d-flex w-100 flex-row justify-content-between align-items-center {{item.isComplete}}">
+      <div id="isComplete" class="m-3" (click)="toggle(item)">{{item.isComplete}}</div>
+      <div  [routerLink]="['./todo-item', item.id]"
+        class="d-flex w-75 justify-content-between flex-column">
+        <h5 class="mb-3 ">{{item.title}}</h5>
+        <small>{{item.date| date}}</small>
+      </div>
+      <button class="btn btn-sm btn-danger" (click)="deleteTodoItem(item.id)">Delete</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="mainWeatherContainer">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="display-1">{{ weatherData?.temp}}<span class="display-3"><sup>&deg;C</sup></span></div>
+        <button [routerLink]="['./search']"><i class="fas fa-search-location">Search City</i></button>        
+      </div>
+      <img src={{weatherData?.icon}}>
+      <h3>{{ weatherData?.cityName}}</h3>
+      <h6>{{ weatherData?.weatherKind}}</h6>
+    </div>
+
+    <!-- forecast -->
+    <div class="fiveDaysForecastContainer w-100">
+      <ul *ngFor="let day of forecast" class="list-group w-100 d-flex justify-content-between">
+        <li class="list-group-item w-100 d-flex justify-content-between" [routerLink]="['./forecast']">
+          <div>{{day.date | date:'EEEE'}}</div>
+          <div>{{day.temp}}</div>
+        </li>
+      </ul>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-center" [routerLink]="['./forecast']"
+          routerLinkActive="router-link-active">More information</li>
+      </ul>
+    </div>
+  </div>
+  <!-- {{forecast | json}} -->
+</div>
